@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from "axios";
+import {message} from "antd";
+
 const Registration = ()=>{
   
     const [input , setinput]= useState({});
@@ -16,10 +18,14 @@ const Registration = ()=>{
  const handelsubmit = async(e)=>{
     e.preventDefault();
     const api = "http://localhost:8000/student/insertdata";
-    const Response = await axios.post(api, input).then((res)=>{
-        alert("aapka data sucefully insert ho chuka hai");
-        setinput(res.data);
-    })
+       try {
+          const response= await axios.post(api, input);
+          console.log(response);
+          message.success(response.data.msg);
+    } catch (error) {
+          console.log(error);
+           alert("error in server");  
+    }
 
  }
 

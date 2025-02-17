@@ -3,7 +3,11 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from "axios";
+import {message} from "antd";
+import { useNavigate } from 'react-router-dom';
+
 const Login = ()=>{
+    let navigate = useNavigate();
        
     
     const [input , setinput]= useState({});
@@ -18,11 +22,23 @@ const Login = ()=>{
  const handelsubmit = async(e)=>{
     e.preventDefault();
     const api = "http://localhost:8000/student/logindata";
-    const response = await axios.post(api, input).then((res)=>{
-        alert("hahhhhhhhha")
-    })
+     try {
+          const response= await axios.post(api, input);
+          console.log(response.data.email);
+          if (response.status==200)
+          {
+            localStorage.setItem("username", response.data.name);
+            localStorage.setItem("useremail", response.data.email);
+            navigate("/dashboard");
+          }
+         
 
- }
+    } catch (error) {
+         message.error(error.response.data.msg);
+    }
+  }
+
+
 
 
     return(
