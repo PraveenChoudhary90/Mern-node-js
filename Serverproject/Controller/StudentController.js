@@ -7,6 +7,7 @@ const Insertdata =async (req,res) =>{
      try {
          const Data= await StudentModel.create({
             name:name,
+            number:number,
             city:city,
             email:email,
             password:password
