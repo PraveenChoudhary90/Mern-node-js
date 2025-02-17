@@ -15,6 +15,25 @@ const Insertdata =async (req,res) =>{
     console.log("data is inserted succefully")
 }
 
+
+const Logindata = async(req,res)=>{
+   const {email, password} = req.body;
+   try {
+    if(!resdata){
+   const resdata = await StudentModel.find({email:email})
+    }
+    if(!resdata.password == password){
+   const resdata = await StudentModel.find({password:password})
+
+    }
+    
+   } catch (error) {
+    console.log(error)
+    
+   }
+}
+
 module.exports = {
     Insertdata,
+    Logindata
 }

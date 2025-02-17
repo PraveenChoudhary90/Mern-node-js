@@ -22,7 +22,7 @@ const Salary = ()=>{
     return(
         <>
         <h1>Salary Page</h1>
-       <h1>Total Salary:{Data} </h1> 
+       <h1>Total Salary:{sum} </h1> 
         
        
         

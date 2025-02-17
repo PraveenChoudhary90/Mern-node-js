@@ -6,6 +6,7 @@ import Layout from './Layout'
 import Display from './Pages/Display'
 import Login from './Pages/Login'
 import Registration from './Pages/Resigtration'
+import Dashboard from './Pages/Dashboard'
 
 function App() {
   
@@ -20,6 +21,7 @@ function App() {
      <Route path='display' element={<Display/>}/>
      <Route path='login' element={<Login/>}/>
      <Route path='registration' element={<Registration/>}/>
+     <Route path="dashboard" element={<Dashboard/>}/>
 
     </Route>
 
