@@ -21,6 +21,7 @@ const Registration = ()=>{
        try {
           const response= await axios.post(api, input);
           console.log(response);
+          alert("data is inserted succesfully")
           message.success(response.data.msg);
     } catch (error) {
           console.log(error);
