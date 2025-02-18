@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import axios from "axios";
 import {message} from "antd";
 import { useNavigate } from 'react-router-dom';
-
+import '@ant-design/v5-patch-for-react-19';
 const Login = ()=>{
     let navigate = useNavigate();
        

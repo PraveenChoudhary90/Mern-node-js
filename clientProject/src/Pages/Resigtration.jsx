@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from "axios";
 import {message} from "antd";
+import '@ant-design/v5-patch-for-react-19';
 
 const Registration = ()=>{
   
@@ -21,11 +22,11 @@ const Registration = ()=>{
        try {
           const response= await axios.post(api, input);
           console.log(response);
-          alert("data is inserted succesfully")
+          // alert("data is inserted succesfully")
           message.success(response.data.msg);
     } catch (error) {
           console.log(error);
-           alert("error in server");  
+           message.error("error in server");  
     }
 
  }
