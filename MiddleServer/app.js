@@ -27,10 +27,19 @@ app.use((req,res,next)=>{
     next();
 })
 app.get("/home",EmpMiddleware,(req,res)=>{
-    console.log("File is uploading here");
-    console.log(req.name);
-    console.log(req.mypic);
-    res.send("my home data here");
+    // console.log("File is uploading here");
+    // console.log(req.name);
+    // console.log(req.mypic);
+    // res.send("my home data here");
+    const status = true;
+    if(status){
+        console.log("home page data")
+        res.status(200).send("home page")
+
+    }
+    else{
+        res.status(400).send("Home Page Error")
+    }
 })
 
 app.get("/about",(req,res,next)=>{
@@ -43,9 +52,16 @@ app.get("/about",(req,res,next)=>{
 })
 
 app.get("/service", (req,res,next)=>{
-    console.log("Service page data loding");
-    res.send("serveic page data");
-    next();
+    try {
+         console.log("Service page data loding");
+         throw new Error("service page errr")
+    res.status(200).send("serveic page data");
+    next()
+    } catch (error) {
+        res.status(400).send({msg:"server is not connected with database" })
+        
+    }
+   ;
 })
 
 app.use((req,res)=>{

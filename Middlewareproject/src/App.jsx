@@ -3,10 +3,17 @@ import './App.css'
 import axios from "axios"
 
 function App() {
-  const Handelbutton =async ()=>{
+  const HandelHome =async ()=>{
       const api = "http://localhost:8000/home";
-      let res = await axios.get(api);
+      try {
+         let res = await axios.get(api);
       console.log(res);
+        
+      } catch (error) {
+        alert(error.response.data)
+        
+      }
+     
   }
 
    const Handelbutton1 =async ()=>{
@@ -14,19 +21,25 @@ function App() {
       let res = await axios.get(api);
       console.log(res);
   }
-   const Handelbutton2 =async ()=>{
+   const HandelService =async ()=>{
       const api = "http://localhost:8000/service";
-      let res = await axios.get(api);
+      try {
+        let res = await axios.get(api);
       console.log(res);
+      } catch (error) {
+        alert(error.response.data.msg)
+        
+      }
+      
   }
   
 
   return (
     <>
     <h1>Welcome to our Middleware</h1>
-    <button onClick={Handelbutton}>Home button</button>
+    <button onClick={HandelHome}>Home button</button>
     <button onClick={Handelbutton1 }>About button</button>
-    <button onClick={Handelbutton2}>Service button</button>
+    <button onClick={HandelService}>Service button</button>
     </>
   )
 }
