@@ -3,7 +3,7 @@ import './App.css'
 import axios from "axios"
 
 function App() {
-  const HandelHome =async ()=>{
+  const HandelHome =async()=>{
       const api = "http://localhost:8000/home";
       try {
          let res = await axios.get(api);

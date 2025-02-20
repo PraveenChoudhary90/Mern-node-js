@@ -5,13 +5,25 @@ const App = ()=>{
 
 const Handelhome =async ()=>{
 
-  let api = "http://localhost:8000/home";
+  let api = "http://localhost:8000/Homepage";
   try {
-    let res = await axios.get(api);
+    const res = await axios.get(api);
     console.log(res);
     
   } catch (error) {
-    console.log(error)
+    alert(error.response.data)
+  }
+
+}
+const Handelabout =async ()=>{
+
+  let api = "http://localhost:8000/Aboutpage";
+  try {
+    const res = await axios.get(api);
+    console.log(res);
+    
+  } catch (error) {
+    alert(error.response.data)
   }
 
 }
@@ -19,8 +31,9 @@ const Handelhome =async ()=>{
 
   return(
     <>
-    <h1>Welcome to our home page</h1>
+    <h1>Welcome to our Home page</h1>
     <button onClick={Handelhome} >  Home click</button>
+    <button onClick={Handelabout} > About click</button>
     
     </>
   )
