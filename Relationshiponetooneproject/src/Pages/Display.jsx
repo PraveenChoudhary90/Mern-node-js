@@ -2,14 +2,14 @@
 
 
 
-const Display = ()=>{
+const Home = ()=>{
     return(
         <>
         
-        <h1>Welcome to Display </h1>
+        <h1>Welcome to home </h1>
         
         </>
     )
 }
 
-export default Display;
+export default Home;
