@@ -6,6 +6,7 @@ import Home from './Pages/Home'
 import Insert from './Pages/Insert'
 import Display from './Pages/Display'
 import AddnewBook from './Pages/AddNewBook'
+import Edit from './Pages/Edit'
 
 function App() {
   
@@ -20,6 +21,7 @@ function App() {
     <Route path='insert' element={<Insert/>}/>
     <Route path='addnewbook' element={<AddnewBook/>}/>
     <Route path='display' element={<Display/>}/>
+    <Route path='edit/:id' element={<Edit/>}/>
     </Route>
    </Routes>
    </BrowserRouter>

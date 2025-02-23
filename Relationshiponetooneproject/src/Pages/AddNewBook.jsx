@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
  import axios from "axios"
+ import {useNavigate} from "react-router-dom"
  
 const AddnewBook = ()=>{
     const [mydata, setmydata ] = useState([]);
+    const navigate = useNavigate();
 
 
     const loaddata =async ()=>{
@@ -29,14 +31,12 @@ const AddnewBook = ()=>{
             <td>{key.email}</td>
             <td>{key.city}</td>
             <td>
-                <button>Add New Book</button>
+                <button onClick={()=>{navigate(`/edit/${key._id}`)}}>Add New Book</button>
             </td>
         </tr>
         </>
     )
   })
-
-
 
     return(
         <>

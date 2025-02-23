@@ -21,8 +21,26 @@ const DataDisplay =async (req,res)=>{
 
 }
 
+const Editsavedata =async (req,res)=>{
+    const { id, bookname, price }=req.body;
+    const Book = await BookModel.create({
+        bookname:bookname,
+        bookprice:price,
+        authorid:id
+    })
+    await AuthorModel.findByIdAndUpdate(id,{$push: {bookid: Book._id}})
+}
+
+const Displayallnewdata = async(req,res)=>{
+    const mydata = await AuthorModel.find().populate("bookid")
+    console.log("okk");
+    res.status(200).send(mydata)
+}
+
 
 module.exports = {
     DataInsert,
-    DataDisplay
+    DataDisplay,
+    Editsavedata,
+    Displayallnewdata
 }

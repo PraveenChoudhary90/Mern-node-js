@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const BookSchema = new mongoose.Schema({
     bookname:String,
-    bookprice:String,
+    bookprice:Number,
     authorid:[{
         type:mongoose.Schema.Types.ObjectId,
         ref:"author"
