@@ -12,6 +12,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 const Port = process.env.PORT || 8000;
 
+mongoose.connect(process.env.STRING).then(()=>{
+    console.log("DB connected!!!");
+})
+
 app.use("/doctor", doctorRoute)
 
 
