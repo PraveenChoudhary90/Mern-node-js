@@ -3,9 +3,10 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from "axios"
 import { ToastContainer, toast } from 'react-toastify';
-
+import {useNavigate} from "react-router-dom"
 const Registration =()=>{
      const [input, setInput] = useState({});
+     const navigate = useNavigate();
 
      const handelInput = (e)=>{
         const name = e.target.name;
@@ -22,6 +23,7 @@ const Registration =()=>{
             const response = await axios.post(api, input)
             console.log(response.data);
             toast.success(response.data.msg);
+            navigate("/login")
         } catch (error) {
             toast.error(response.data.msg)
         }

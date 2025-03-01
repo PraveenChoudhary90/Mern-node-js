@@ -5,6 +5,7 @@ import Layout from './Layout'
 import Home from './Pages/Home'
 import Registration from './Pages/Registration'
 import Login from './Pages/Login'
+import Dashboard from './Dashboard'
 
 function App() {
   
@@ -19,6 +20,11 @@ function App() {
      <Route path='Registration' element={<Registration/>}/>
      <Route path='login' element={<Login/>}/> 
      </Route>
+     </Routes>
+     <Routes>
+      <Route path='dashboard' element={<Dashboard/>}>
+
+      </Route>
      </Routes>
      </BrowserRouter>
     </>
