@@ -21,7 +21,7 @@ function App() {
       <Route path="home" element={<Home/>}/>
       <Route path='service' element={<Proctoted Component={Service} />}/>
       <Route path="about" element={<Proctoted Component={About} />}/>
-      <Route path='contact' element={<Proctoted Component={Placement} />}/>
+      <Route path='placement' element={<Proctoted Component={Placement} />}/>
       <Route path='login' element={<Login/>}/>
       <Route path='contact' element={<Contact/>}/>
       </Route>

@@ -1,20 +1,17 @@
-
-
-import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
-
-export default function Proctoted(props) {
-    let {Component}=props;
-    let nav=useNavigate();
+import { useEffect } from "react"
+import { useNavigate } from "react-router-dom"
+const Protected=({Component})=>{
+const navigate=useNavigate();
     useEffect(()=>{
-        if(!localStorage.getItem("login")){
-         nav("/home");   
+        if(!localStorage.getItem("name")){
+            navigate("/home")
         }
     })
-  return (
-    <div>
-        <Component/>
-      
-    </div>
-  )
+    return(
+        <>
+  <Component/>  
+        </>
+    )
 }
+
+export default Protected

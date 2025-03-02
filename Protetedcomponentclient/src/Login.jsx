@@ -1,39 +1,26 @@
+import { useState,useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+const Login=()=>{
+    const [name,setname]=useState("");
+const navigate=useNavigate();
+const handleLogin=()=>{
+    console.log(name)
+localStorage.setItem("name",name);
+navigate("/home")
 
+}
 
-// import React, { useEffect } from 'react'
-// import { useDispatch, useSelector } from 'react-redux'
-// import  login from './Login';
-// import { useNavigate } from 'react-router-dom';
-// export default function Login() {
-//     let value=useSelector(state=>state.login.login)
-//     console.log(value)
-//     let nav=useNavigate();
-//     let dispatch =useDispatch();
-//     const loginknow=()=>{
-//         localStorage.setItem("login",true)
-//     }
-//     useEffect(()=>{
-//         if(localStorage.getItem("login")){
-//             nav("/home")
-//             console.log(localStorage.getItem("login"))
-//         }
-//     },[])
-//   return (
-//     <div>
-//       <h1>Login page</h1>
-
-//       <button onClick={()=>{loginknow()}}>Login </button>
-//     </div>
-//   )
-// }
-const Login = ()=>{
+useEffect(()=>{
+if(localStorage.getItem("name")){
+navigate("/home")
+}
+},[])
     return(
         <>
-        <h1>login here</h1>
-        Enter Name:<input type="text" /><br></br>
-        Enter Email:<input type="text" /><br></br>
-        Enter Password:<input type="text" /><br></br>
-        <button>submit</button>
+        <h1>Login</h1>
+        Enter Name : <input type="text" name='name' onChange={(e)=>{setname(e.target.value)}} /> <br /> <br />
+        Password : <input type="text" name ="pass" /> <br />
+        <button onClick={handleLogin}>Login</button>
         </>
     )
 }
