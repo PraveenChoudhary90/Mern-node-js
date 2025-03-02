@@ -30,6 +30,9 @@ const Login = ()=>{
     return(
         <>
         <h1>login here</h1>
+        Enter Name:<input type="text" /><br></br>
+        Enter Email:<input type="text" /><br></br>
+        Enter Password:<input type="text" /><br></br>
         </>
     )
 }
