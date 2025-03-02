@@ -33,6 +33,7 @@ const Login = ()=>{
         Enter Name:<input type="text" /><br></br>
         Enter Email:<input type="text" /><br></br>
         Enter Password:<input type="text" /><br></br>
+        <button>submit</button>
         </>
     )
 }
