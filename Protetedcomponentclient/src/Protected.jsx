@@ -6,7 +6,7 @@ const navigate=useNavigate();
         if(!localStorage.getItem("name")){
             navigate("/home")
         }
-    })
+    },[])
     return(
         <>
   <Component/>  
