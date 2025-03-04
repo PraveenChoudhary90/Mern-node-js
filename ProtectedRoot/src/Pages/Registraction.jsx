@@ -14,11 +14,11 @@ const Registration = ()=>{
         localStorage.setItem("username",input)
         navigate("/home")
     }
-    useEffect(()=>{
-        if(localStorage.getItem(input)){
-        navigate("/home")
-        }
-    },[])
+    // useEffect(()=>{
+    //     if(localStorage.getItem(input)){
+    //     navigate("/home")
+    //     }
+    // },[])
     return(
         <>
         

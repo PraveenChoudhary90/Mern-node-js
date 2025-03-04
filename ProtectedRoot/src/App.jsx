@@ -20,9 +20,10 @@ function App() {
   <Route path='home' element={<Home/>}/>
   <Route path='about' element={<Protected Component={About}/>}/>
   <Route path='registration' element={<Registration />}/>
-  <Route path='contact' element={< Protected Component={Contact} />}/>
   <Route path='placement' element={<   Protected Component={Placement} />}/>
   <Route path='login' element={<Protected Component={Login} />}/>
+  <Route path='contact' element={<Contact/>}/>
+
     </Route>
   </Routes>
   </BrowserRouter>
