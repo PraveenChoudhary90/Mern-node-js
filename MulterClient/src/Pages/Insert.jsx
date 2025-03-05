@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import axios from "axios"
 const Insert = ()=>{
     const [input, setInput]= useState({});
     const [image, setImage]=useState("");
@@ -16,6 +17,25 @@ const Insert = ()=>{
         const name = e.target.files[0];
         setImage(name);
         console.log(image);
+    }
+
+
+
+    const handelSubmit =async(e)=>{
+      e.preventDefault();
+      const api = "http://localhost:8000/Image/Insertdata";
+
+
+      const formData = new FormData();
+      formData.append("rollno", input.rollno);
+      formData.append("name", input.name);
+      formData.append("city", input.city);
+      formData.append("imagedata", image)
+
+      const response = await axios.post(api,formData);
+      console.log(response.data);
+      alert("data save");
+
     }
 
 
@@ -42,7 +62,7 @@ const Insert = ()=>{
         <Form.Label>Insert Image</Form.Label>
         <Form.Control type="file" name='imgurl' onChange={handelImage} />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" onClick={handelSubmit} >
         Submit
       </Button>
     </Form>
