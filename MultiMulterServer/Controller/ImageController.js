@@ -22,7 +22,15 @@ const DisPlayData = async(req,res)=>{
     res.send(Data);
 }
 
+const ShowimagesData = async(req,res)=>{
+  const {id} = req.body;
+  const Product = await ImageModel.findById(id);
+  console.log(Product);
+  res.send(Product);
+}
+
 module.exports = {
     InsertAllData,
-    DisPlayData  
+    DisPlayData,
+    ShowimagesData  
 }

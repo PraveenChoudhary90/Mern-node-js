@@ -40,6 +40,7 @@ const storage = multer.diskStorage({
 
 route.post("/InsertData", upload.array('images', 10), ImagesController.InsertAllData);
 route.get("/DisplayData", ImagesController.DisPlayData)
+route.post("/Showimage", ImagesController.ShowimagesData)
 
 
 

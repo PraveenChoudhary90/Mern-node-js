@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
+import {useNavigate} from "react-router-dom";
 const Display=()=>{
   const [mydata, setMydata] = useState([]);
-
+  const navigate = useNavigate();
 
   const loadData=async()=>{
     let api="http://localhost:8000/Images/DisplayData";
     const response = await axios.get(api);
     setMydata(response.data);
     console.log(response.data);
+
   }
 
   useEffect(()=>{
@@ -34,8 +36,9 @@ const Display=()=>{
         <td> 
        
 
-
+         <button onClick={()=>{navigate(`/showdata/${key._id}`)}}>
           <img src={`http://localhost:8000/${key.defaultImage}`} width="300" height="300" />
+         </button>
            </td>
         <td> {key.name} </td>
         <td> {key.brand} </td>

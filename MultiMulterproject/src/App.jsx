@@ -5,6 +5,7 @@ import Layout from './Layout'
 import Home from './Pages/Home'
 import Insert from './Pages/Insert'
 import Display from './Pages/Display'
+import Showdata from './Pages/Showdata'
 
 function App() {
   
@@ -18,6 +19,7 @@ function App() {
       <Route path='home' element={<Home/>}/>
       <Route path='insert' element={<Insert/>}/>
       <Route path='display' element={<Display/>}/>
+      <Route path='showdata/:id' element={<Showdata/>}/>
       </Route>
     </Routes>
     
