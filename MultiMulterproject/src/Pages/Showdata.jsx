@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 const Showdata = ()=>{
     const {id} = useParams();
-    const [mydata, setMydata] = useState({});
-    const [showimage, setShowimage] = useState("");
-    const [myimage, setImgae] = useState([]);
+    const [mydata, setMydata] = useState({});//data aaya hai object form me backend se
+    const [showimage, setShowimage] = useState("");//default image set kare hai esme
+    const [myimage, setImgae] = useState([]);//imges hai jpo array form hai isliye usetate liye hai
     
     
   const loadData=async()=>{
