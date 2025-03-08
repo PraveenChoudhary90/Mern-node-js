@@ -41,8 +41,16 @@ const AddnewBook = async(req,res)=>{
 
 }
 
+
+const NewBookDisplay = async(req,res)=>{
+    const Book  =await BookModel.find().populate("autherid");
+    res.send(Book);
+}
+
+
 module.exports = {
     InsertData,
     DisplayData,
-    AddnewBook
+    AddnewBook,
+    NewBookDisplay
 }

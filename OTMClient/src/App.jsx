@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Insert from './pages/Insert'
 import Display from './pages/Display'
 import AddNewBook from './pages/AddNewBook'
+import BookDisplaydata from './pages/BookDisplaydata'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
   <Route path='insert' element={<Insert/>}/>
   <Route path='display' element={<Display/>}/>
   <Route path='addnewbook/:id' element={<AddNewBook/>}/>
+  <Route path='newbook' element={<BookDisplaydata/>}/>
 
   </Route>
  </Routes>

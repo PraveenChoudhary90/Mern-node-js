@@ -10,9 +10,6 @@ function AddNewBook() {
     const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
 
-
-  
-
   const handelImage = (e)=>{
     const files = e.target.files[0];
     setImage(files);
@@ -26,7 +23,8 @@ function AddNewBook() {
     formData.append("bookname",bookname);
     formData.append("price", price);
     formData.append("image", image);
-    const response = await axios.post(api,formData, {aid:id});
+    formData.append("aid", id);
+    const response = await axios.post(api,formData);
     console.log(response.data);
     alert("Book data save");
 
