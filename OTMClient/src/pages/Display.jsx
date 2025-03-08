@@ -22,6 +22,8 @@ const Display = ()=>{
             <td></td>
             <td>{key.name}</td>
             <td>{key.email}</td>
+            <td>{key.bookname}</td>
+            <td>{key.price}</td>
         </tr>
         
         </>
