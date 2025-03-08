@@ -20,7 +20,7 @@ const upload =multer ({storage:storage});
 
 route.post("/InsertData",upload.single("image"),ImageController.InsertData);
 route.get("/Display", ImageController.DisplayData )
-
+route.post("/AddNewBook",upload.single("image") ,ImageController.AddnewBook);
 
 
 

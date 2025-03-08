@@ -26,8 +26,23 @@ const DisplayData = async(req,res)=>{
     
 }
 
+const AddnewBook = async(req,res)=>{
+    const {bookname, price ,aid} = req.body;
+    const myimg = req.file.filename;
+    const Book = await BookModel.create({
+        bookname:bookname,
+        price:price,
+        autherid:aid,
+        image:myimg
+
+    })
+    await AutherModel.findByIdAndUpdate(aid, {$push:{ bookid:Book._id}})
+  res.send("new book succesflyy added!!!");
+
+}
 
 module.exports = {
     InsertData,
-    DisplayData
+    DisplayData,
+    AddnewBook
 }
