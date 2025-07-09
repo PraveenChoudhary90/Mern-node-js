@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import axios from "axios";
 
 function Insert() {
     const [input, setInput] = useState("");
@@ -21,8 +22,16 @@ function Insert() {
   }
 
 
-  const HandelSubmit = (e)=>{
+  const HandelSubmit =async (e)=>{
     e.preventDefault();
+     
+    const formData = new FormData();
+    formData.append("file" , image);
+     formData.append("upload_preset", "praveen");
+     formData.append("cloud_name", "drdjcmgtx");
+     const api = "https://api.cloudinary.com/v1_1/drdjcmgtx/image/upload";
+     const response = await axios.post(api, formData);
+     console.log(response.data);
   }
 
 
