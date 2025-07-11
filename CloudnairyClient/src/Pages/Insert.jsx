@@ -17,7 +17,7 @@ function Insert() {
 
 
   const HandelImage = (e)=>{
-    setImage(e.target.files);
+    setImage(e.target.files[0]);
     console.log(image);
   }
 
@@ -26,6 +26,7 @@ function Insert() {
     e.preventDefault();
      
     const formData = new FormData();
+    
     formData.append("file" , image);
      formData.append("upload_preset", "praveen");
      formData.append("cloud_name", "drdjcmgtx");
@@ -56,7 +57,7 @@ function Insert() {
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Product Image</Form.Label>
-        <Form.Control type="file" multiple onChange={HandelImage} />
+        <Form.Control type="file" name='imgurl'  onChange={HandelImage} />
       </Form.Group>
       <Button variant="primary" type="submit" onClick={HandelSubmit}>
         Submit
