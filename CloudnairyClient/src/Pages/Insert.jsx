@@ -26,7 +26,7 @@ function Insert() {
     e.preventDefault();
      
     const formData = new FormData();
-    
+
     formData.append("file" , image);
      formData.append("upload_preset", "praveen");
      formData.append("cloud_name", "drdjcmgtx");
@@ -34,7 +34,6 @@ function Insert() {
      const response = await axios.post(api, formData);
      console.log(response.data);
   }
-
 
 
   return (
