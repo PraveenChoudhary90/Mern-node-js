@@ -34,6 +34,11 @@ function Insert() {
        console.log(response.data);
        console.log(response.data.url);
        alert("okk img");
+
+       const api1 = "http://localhost:8000/Cloud/SaveData";
+       const response1  = await axios.post(api1,{imgurl:response.data.url, ...input}) 
+       console.log(response1.data);
+       alert("data save");
   }
 
 
