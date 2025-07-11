@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-
+const Croute = require("./Routes/CRoute");
 
 
 app.use(cors());
@@ -22,7 +22,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/PraveenCloudinaryy").then(()=>{
 
 
 
-
+app.use("/Cloud", Croute);
 
 
 

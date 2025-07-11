@@ -38,7 +38,7 @@ function Insert() {
        const api1 = "http://localhost:8000/Cloud/SaveData";
        const response1  = await axios.post(api1,{imgurl:response.data.url, ...input}) 
        console.log(response1.data);
-       alert("data save");
+       alert(response1.data.msg);
   }
 
 
